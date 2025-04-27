@@ -1,0 +1,342 @@
+/* select of color  */
+.pdp-swatches__options1 {
+    display: flex;
+    gap: 15px; /* المسافة بين الدوائر */
+  }
+  
+  .dropin-text-swatch__container1 {
+    position: relative;
+  }
+  
+  .dropin-text-swatch__container1 input[type="radio"] {
+    display: none; /* إخفاء زر الراديو الافتراضي */
+  }
+  
+  .dropin-text-swatch__container1 label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* قطر الدائرة */
+    height: 40px;
+    border: 2px solid #ccc; /* لون الإطار الافتراضي */
+    border-radius: 50%; /* تحويل الشكل إلى دائرة */
+    cursor: pointer;
+    transition: 0.4s ease; /* تأثير الانتقال */
+  }
+  
+  .dropin-text-swatch__container1 label::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* لضمان أن الشكل يبقى دائري */
+    background-color: currentColor; /* تعيين اللون */
+    transition: 0.6s ease; /* تأثير الانتقال */
+  }
+  
+  .dropin-text-swatch__container1 input[type="radio"]:checked + label {
+    border-color: #323030; /* لون الإطار عند التحديد */
+  }
+  
+  .dropin-text-swatch__container1 input[type="radio"]:checked + label::before {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* تأثير عند التحديد */
+  }
+  
+/* End color */
+.message {
+  display: none;
+  position: absolute;
+  top: -50px;  /* بداية الرسالة من فوق (خارج الشاشة) */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 9999;
+  opacity: 0;  /* بداية الرسالة تكون غير مرئية */
+  animation: slideDown 0.5s ease forwards, slideUp 0.5s ease forwards 2s;
+}
+
+/* انيميشن الهبوط */
+@keyframes slideDown {
+  0% {
+      top: -50px; /* البداية من فوق */
+      opacity: 0;
+  }
+  100% {
+      top: 50px;  /* النهاية على المسافة المحددة */
+      opacity: 1;
+  }
+}
+
+/* انيميشن العودة للأعلى */
+@keyframes slideUp {
+  0% {
+      top: 50px;
+      opacity: 1;
+  }
+  100% {
+      top: -50px; /* العودة لأعلى الشاشة */
+      opacity: 0;
+  }
+}
+.empty-cart-message {
+  display: none;
+  text-align: center;
+  padding: 30px 20px;
+  animation: slideDown 0.6s ease;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.empty-cart-message h4 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.empty-cart-message button {
+  background-color: #212529;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.empty-cart-message button:hover {
+  background-color: #343a40;
+}
+
+@keyframes slideDown {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+#cartMessageId {
+  position: fixed;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: top 0.4s ease;
+  z-index: 9999;
+}
+
+#cartMessageId.show {
+  top: 20px;
+}
+/* ////////////////////////////////////////////// */
+.imgs {
+   width: 80%;
+   padding: 15px;
+}
+
+.image-container img {
+
+    object-fit: cover;
+    
+}
+
+
+
+.imginfo {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 16px;
+}
+
+.imginfo h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.imginfo h5 {
+    font-size: 20px;
+    color: #888;
+}
+.imginfo .select-color {
+    gap: 30px;
+}
+
+.pdp-swatches__field {
+    margin-top: 20px;
+}
+
+
+
+.pdp-swatches__options {
+    display: flex;
+    gap: 10px; /* المسافة بين المربعات */
+  }
+  
+  .dropin-text-swatch__container {
+    position: relative;
+  }
+  
+  .dropin-text-swatch__container input[type="radio"] {
+    display: none; /* إخفاء زر الراديو الافتراضي */
+  }
+  
+  .dropin-text-swatch__container label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* عرض المربع */
+    height: 40px; /* ارتفاع المربع */
+    border: 2px solid #333; /* لون الإطار */
+    border-radius: 4px; /* زوايا مستديرة قليلاً */
+    font-size: 14px; /* حجم النص */
+    font-weight: bold; /* جعل النص عريضاً */
+    color: #333; /* لون النص الافتراضي */
+    cursor: pointer;
+    transition: 0.3s ease; /* تأثير عند التغيير */
+  }
+  
+  .dropin-text-swatch__container input[type="radio"]:checked + label {
+    background-color: #333; /* لون الخلفية عند التحديد */
+    color: #fff; /* لون النص عند التحديد */
+    border-color: #333; /* لون الإطار عند التحديد */
+  }
+  
+
+.pdp-product__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.dropin-button {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 252, 252);
+    border: 1px solid black;
+    margin-top: 10px;
+    font-size: large;
+    width: 60%;
+    transition: 0.6s ease;
+}
+.dropin-button:hover {
+    background-color: transparent;
+    color: #000000;
+    transition: 0.6s ease;
+}
+.dropin-button2 {
+    text-align: center;
+    padding: 10px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    margin-top: 10px;
+    font-size: large;
+    transition: 0.6s ease;
+}
+.dropin-button2:hover {
+    background-color: #ccc;
+}
+
+
+.dropin-button-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* مسافة بين الأزرار */
+    background-color: transparent;
+    color: #000000;
+    width: 100%;
+
+}
+.dropin-button-bar2 {
+    width: 50%;
+}
+.dropin-button-bar .dropin-button-bar2 button {
+ text-align: center;
+    padding: 10px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    margin-top: 10px;
+    font-size: large;
+    width: 100%;
+}
+.dropin-button-bar .dropin-button-bar2 button:hover {
+    background-color:#ccc;
+    color: #000000;
+    transition: 0.6s ease;
+}
+.counter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* المسافة بين العناصر */
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    
+  }
+  
+  .counter-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000000;
+    border-radius: 10%; /* أزرار دائرية */
+    background-color: #fff;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease;
+  }
+  
+  .counter-btn:hover {
+    background-color: #000000;
+    color: #fff;
+  }
+  
+  .counter-value {
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+  }
+  
+
+.wishlist-container {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* مسافة صغيرة بين الأيقونة والنص */
+    cursor: pointer;
+}
+
+.icon4 img {
+    width: 20px;
+}
+
+.icon-share img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+}
+/* //////////////////////// */
+#accordion{
+    width: 90%;
+    margin-top: 50px;
+
+}
+#accordion .card {
+    border: none;
+}
